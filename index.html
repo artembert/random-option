@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>random-option</title>
+</head>
+<body>
+<style>
+body {
+	font-family: 'Helvetica', 'HelveticaNeueCyr', sans-serif;
+}
+</style>
+<div id="root" style="margin: 0 auto; width: max-content;">
+	<h1>Варианты группы</h1>
+
+	<pre id="students-with-options"></pre>
+	<table>
+		<tr>
+			<td><b>Вопрос</b></td>
+			<td><b>Фамилия</b></td>
+		</tr>
+		<tr v-for="student in students">
+			<td>{{ student.option }}</td>
+			<td>{{ student.name }}</td>
+
+		</tr>
+	</table>
+	<h1>Частоты вариантов</h1>
+	<table>
+		<tr>
+			<td><b>Вопрос</b></td>
+			<td><b>Частота</b></td>
+		</tr>
+		<tr v-for="option in frequency">
+			<td>Вопрос №{{ option.key }}:</td>
+			<td><b>{{ option.value }}</b> раз(а)</td>
+		</tr>
+	</table>
+	<pre id="frequency-of-options"></pre>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script src="./random-option.js"></script>
+</body>
+</html>
